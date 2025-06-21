@@ -210,6 +210,9 @@
         "Components/SettingsControlBackStorage.qml",
         "Components/SettingsControlMirrorAdjustment.qml",
         "icons/icon_battrey/left-arrow.svg",
-        "Components/SeatIcon.qml"
+        "Components/SeatIcon.qml",
+        "Components/Speedshow.qml",
+        "icons/speeds_show/*",
+        "Components/CircularGaugeMeter.qml"
     ]
 }

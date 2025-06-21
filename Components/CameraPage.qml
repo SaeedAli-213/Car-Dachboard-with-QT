@@ -135,6 +135,7 @@ Popup {
 
         function onVehicle_speed_updated(speed) {
             speedDisplay.children[0].text = "Speed: " + speed.toFixed(2) + " km/h";
+            console.log("Speed updated:", speed)
         }
     }
 

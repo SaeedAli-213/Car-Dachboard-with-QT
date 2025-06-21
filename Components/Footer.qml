@@ -12,6 +12,7 @@ Item {
     signal openCamera
     signal openBattery
     signal openCarSetting
+    signal openSpeedshow
     LinearGradient {
         anchors.fill: parent
         start: Qt.point(0, 0)
@@ -76,7 +77,7 @@ Item {
             icon.source: "../icons/app_icons/dashcam.svg"
             onClicked:{
                 backend.start_front_camera()
-                Style.mapAreaVisible = !Style.mapAreaVisible
+                // Style.mapAreaVisible = !Style.mapAreaVisible
                 openCamera()
             }
         }
@@ -93,6 +94,11 @@ Item {
         Icon {
             icon.source: "../icons/icon_battrey/Car Settings Icon.svg"
             onClicked: openCarSetting()
+        }
+
+        Icon {
+            icon.source: "../icons/icon_battrey/Car Settings Icon.svg"
+            onClicked: openSpeedshow()
         }
 
     }

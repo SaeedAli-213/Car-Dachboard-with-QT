@@ -11,7 +11,7 @@ from PySide6.QtLocation import QGeoServiceProvider
 
 import carla_worker
 import numpy as np
-import time
+import time 
 import base64
 # main.py
 import threading
@@ -24,9 +24,7 @@ threading.Thread(target=run_carla_loop, args=(backend,), daemon=True).start()
 if __name__ == "__main__":
     app = QGuiApplication(sys.argv)
     engine = QQmlApplicationEngine()
-
-    qmlRegisterSingletonType(QUrl.fromLocalFile("Style.qml"), "Style", 1, 0, "Style")
-
+    
     engine.rootContext().setContextProperty("backend", backend)
     qml_file = Path(__file__).resolve().parent / "main.qml"
     engine.load(qml_file)

@@ -58,6 +58,7 @@ ApplicationWindow {
         onOpenCamera: camera.open()
         onOpenBattery: battery.open()
         onOpenCarSetting : carsetting.open()
+        onOpenSpeedshow : speedshow.open()
     }
 
     TopLeftButtonIconColumn {
@@ -127,11 +128,7 @@ ApplicationWindow {
         }
 
 
-    CameraPage {
-        id: camera
-        x : 620
-        y : 50
-    }
+
 
     LaunchPadControl {
         id: launcher
@@ -263,6 +260,31 @@ ApplicationWindow {
     //     id: battery
     //     BatteryPage {}
     // }
+
+    CameraPage {
+        id: camera
+        x : 350
+        y : 50
+        Layout.preferredWidth: parent.width - (parent.width * 0.2)
+        Layout.preferredHeight: parent.height
+    }
+    // ColumnLayout {
+    //     anchors.fill: parent
+    //     Item {
+    //         x: 350
+    //         y: 50
+    //         width: parent.width
+    //         height: parent.height
+
+    //         Layout.preferredWidth: parent.width - (parent.width * 0.2)
+    //         Layout.preferredHeight: parent.height
+    //         CameraPage {
+    //             id: camera
+    //             // anchors.fill: parent
+    //         }
+    //     }
+    // }
+
     BatteryPage {
         id: battery
         y: 70
@@ -270,6 +292,22 @@ ApplicationWindow {
         Layout.preferredWidth: parent.width - (parent.width * 0.2)
         Layout.preferredHeight: parent.height
     }
+    // ColumnLayout {
+    //     anchors.fill: parent
+    //     Item {
+    //         x: 100
+    //         y: 70
+    //         width: parent.width
+    //         height: parent.height
+
+    //         Layout.preferredWidth: parent.width - (parent.width * 0.2)
+    //         Layout.preferredHeight: parent.height
+    //         BatteryPage {
+    //             id: battery
+    //             // anchors.fill: parent
+    //         }
+    //     }
+    // }
 
     CarScreen {
         id :carsetting
@@ -278,22 +316,45 @@ ApplicationWindow {
         Layout.preferredWidth: parent.width - (parent.width * 0.2)
         Layout.preferredHeight: parent.height
     }
+    // ColumnLayout {
+    //     anchors.fill: parent
+    //     Item {
+    //         x: 400
+    //         y: 70
+    //         width: parent.width
+    //         height: parent.height
 
-
-
-    Speedometer {
-           id: mySpeedometer
-           speed: currentSpeed
-       }
-    property real currentSpeed: 0
-
-    Connections {
-        target: backend
-
-        function onVehicle_speed_updated(speed) {
-            currentSpeed = speed
-        }
+    //         Layout.preferredWidth: parent.width - (parent.width * 0.2)
+    //         Layout.preferredHeight: parent.height
+    //         CarScreen {
+    //             id: carsetting
+    //             anchors.fill: parent
+    //         }
+    //     }
+    // }
+    Speedshow {
+        id :speedshow
+        y : 70
+        x : 80
+        Layout.preferredWidth: parent.width - (parent.width * 0.2)
+        Layout.preferredHeight: parent.height - (parent.height * 0.3)
     }
 
+    // ColumnLayout {
+    //     anchors.fill: parent
+    //     Item {
+    //         x: 80
+    //         y: 70
+    //         width: parent.width
+    //         height: parent.height
+
+    //         Layout.preferredWidth: parent.width - (parent.width * 0.2)
+    //         Layout.preferredHeight: parent.height- (parent.height * 0.3)
+    //         Speedshow {
+    //             id: speedshow
+    //             anchors.fill: parent
+    //         }
+    //     }
+    // }
 
 }
